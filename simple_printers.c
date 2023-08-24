@@ -23,7 +23,7 @@ int print_from_to(char *start, char *stop, char *except)
 }
 
 /**
-  * prints_rev - prints in reverse
+  * print_rev - prints in reverse
   *
   * @params: input parameters
   * @k: input pointer

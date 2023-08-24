@@ -5,12 +5,12 @@
   *
   * @base: input base number
   * @num: input initial number
-  * @flags: input arguments
+  * @flag: input arguments
   * @params: input parameters
   *
   * Return: results
   */
-char *convert(long int num, int base, int flags, params_t *params)
+char *convert(long int num, int base, int flag, params_t *params)
 {
 	static char *array;
 	static char buffer[50];
@@ -19,13 +19,13 @@ char *convert(long int num, int base, int flags, params_t *params)
 	unsigned long n = num;
 	(void)params;
 
-	if (!(flags & CONVERT_UNSIGNED) && num < 0)
+	if (!(flag & CONVERT_UNSIGNED) && num < 0)
 	{
 		n = -num;
 		sign = '-';
 
 	}
-	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+	array = flag & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
 

@@ -9,7 +9,7 @@
   */
 int _isdigit(int c)
 {
-	return (c >= '0' && <= '9');
+	return (c >= '0' && c <= '9');
 }
 
 /**
@@ -42,13 +42,13 @@ int print_number(char *str, params_t *params)
 	int neg = (!params->unsign && *str == '-');
 
 	if (!params->precision && *str == '0' && !str[1])
-		str = '';
+		str = "";
 	if (neg)
 	{
 		str++;
 		i--;
 	}
-	if (params->precision != UNIT_MAX)
+	if (params->precision != UINT_MAX)
 		while (i++ < params->precision)
 			*--str = '0';
 	if (neg)
@@ -85,7 +85,7 @@ int print_number_right_shift(char *str, params_t *params)
 		i++;
 	if (neg && pad_char == '0')
 		n += _putchar('-');
-	if (params ->plus_flag && !_neg && pad_char == '0' & !params->unsign)
+	if (params->plus_flag && !_neg && pad_char == '0' & !params->unsign)
 		n += _putchar('+');
 	else if (!params->plus_flag && params->space_flag && !_neg &&
 			!params->unsign && params->zero_flag)

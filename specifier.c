@@ -21,7 +21,7 @@ int (*get_specifier(char *s))(va_list k, params_t *params)
 		{"x", print_hex},
 		{"X", print_HEX},
 		{"p", print_address},
-		{"s", print_s},
+		{"s", print_S},
 		{"r", print_rev},
 		{"R", print_rot13},
 		{NULL, NULL}
@@ -53,7 +53,7 @@ int get_print_func(char *s, va_list k, params_t *params)
 	int (*f)(va_list, params_t *) = get_specifier(s);
 
 	if (f)
-		return (f(k,params));
+		return (f(k, params));
 	return (0);
 }
 
@@ -108,7 +108,7 @@ int get_modifier(char *s, params_t *params)
 			i = params->h_modifier = 1;
 			break;
 		case 'l':
-			i = params->l+modifier = 1;
+			i = params->l_modifier = 1;
 			break;
 	}
 	return (i);

@@ -10,7 +10,7 @@
   */
 void init_params(params_t *params, va_list k)
 {
-	params->unsigne = 0;
+	params->unsign = 0;
 
 	params->plus_flag = 0;
 	params->space_flag = 0;
@@ -19,7 +19,7 @@ void init_params(params_t *params, va_list k)
 	params->minus_flag = 0;
 
 	params->width = 0;
-	params->precision = UNIT_MAX;
+	params->precision = UINT_MAX;
 
 	params->h_modifier = 0;
 	params->l_modifier = 0;

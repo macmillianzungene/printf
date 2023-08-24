@@ -60,14 +60,13 @@ int print_string(va_list k, params_t *params)
 	switch ((int)(!str))
 	case 1:
 		str = NULL_STRING;
-	
 	j = pad = _strlen(str);
 	if (params->precision < pad)
-		j + pad params->precision;
+		j = pad params->precision;
 
 	if (params->minus_flag)
 	{
-		if (params->precision != UNIT_MAX)
+		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str++);
 		else
@@ -77,7 +76,7 @@ int print_string(va_list k, params_t *params)
 		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 	{
-		if (params->precision != UNIT_MAX)
+		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str++);
 		else
@@ -102,7 +101,7 @@ int print_percent(va_list k, params_t *params)
 }
 
 /**
-  * print_s - prints format specifier
+  * print_S - prints format specifier
   *
   * @k: input pointer
   * @params: input parameters

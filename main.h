@@ -60,11 +60,11 @@ typedef struct parameters
 typedef struct specifier
 {
 	char *specifier;
-	int (*f) (va_list, params_t *);
+	int (*f)(va_list, params_t *);
 } specifier_t;
 
 /* _put.c module */
-int _puts.c(char *str);
+int _puts(char *str);
 int _putchar(int c);
 
 /* print_functions.c module */
@@ -75,9 +75,9 @@ int print_percent(va_list k, params_t *params);
 int print_S(va_list k, params_t *params);
 
 /* number.c module */
-char *convert(long int num, int base, int flags, params_t *params);
+char convert(long int num, int base, int flag, params_t *params);
 int print_unsigned(va_list k, params_t *params);
-int print_address(va_list k, parsms_t *params);
+int print_address(va_list k, params_t *params);
 
 /* specifier.c module */
 int (*get_specifier(char *s))(va_list k, params_t *params);
@@ -95,7 +95,7 @@ int print_octal(va_list k, params_t *params);
 /* simple_printers.c module */
 int print_from_to(char *start, char *stop, char *except);
 int print_rev(va_list k, params_t *params);
-int print_rot13(va_list k,params_t *params);
+int print_rot13(va_list k, params_t *params);
 
 /* print_number.c module */
 int _isdigit(int c);
