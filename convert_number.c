@@ -73,10 +73,9 @@ int print_HEX(va_list k, params_t *params)
 int print_binary(va_list k, params_t *params)
 {
 	unsigned int n = va_arg(k, unsigned int);
-	char *str;
+	char str = *(n, 2, CONVERT_UNSIGNED, params);
 	int c = 0;
 
-	*str = convert(n, 2, CONVERT_UNSIGNED, params);
 	if (params->hashtag_flag && n)
 		*--str = '0';
 	params->unsign = 1;
